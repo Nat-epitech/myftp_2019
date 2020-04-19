@@ -43,7 +43,7 @@ typedef struct element
     struct element *next;
 } element, *List;
 
-int server_gestion(server_t server);
+void server_gestion(server_t server);
 void do_cmd(char **tab, element *clt);
 char **str_wordtab(char *str, char *tok);
 char	*get_next_line(const int fd);
