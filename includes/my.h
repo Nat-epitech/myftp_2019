@@ -34,7 +34,7 @@ typedef struct element
     int sockfd;
     struct sockaddr_in serv_client;
     char pwd[100];
-    char root[100];
+    char *root;
     int mode;
     int buff_size;
     int log;
@@ -44,7 +44,6 @@ typedef struct element
 } element, *List;
 
 int server_gestion(server_t server);
-char **str_tab(char *str, char *tok);
 void do_cmd(char **tab, element *clt);
 char **str_wordtab(char *str, char *tok);
 char	*get_next_line(const int fd);
@@ -56,4 +55,5 @@ void delete(char **tab, element *clt);
 void cdup(char **tab, element *clt);
 void cwd(char **tab, element *clt);
 void pwd(char **tab, element *clt);
+void test_space(char *line, element *tmp);
 #endif /* !MY_H_ */
